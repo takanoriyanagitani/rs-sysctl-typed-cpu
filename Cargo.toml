@@ -1,0 +1,37 @@
+[package]
+name = "rs-sysctl-typed-cpu"
+version = "0.1.0"
+edition = "2024"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+unwrap_used = "forbid"
+
+[dependencies.serde]
+version = "1"
+features = [
+	"std",
+	"derive",
+]
+
+[dependencies.sysctl]
+version = "0"
+features = [
+]
+
+[dependencies.async-graphql]
+version = "7"
+optional = true
+features = [
+]
+
+[features]
+default-feature = [
+	"gql",
+]
+
+gql = [
+	"async-graphql",
+]
